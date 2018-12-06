@@ -1,0 +1,15 @@
+{
+  "name": "background",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "build": "browserify script.js > bundle.js && live-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Konrad",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.11"
+  }
+}
