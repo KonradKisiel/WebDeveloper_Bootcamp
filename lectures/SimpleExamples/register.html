@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form method="GET"> <!-- action="action.php" old way for run backend script -->
+		<!-- for each user information element we need to add name -->
+		First Name: <input type="text" name="firstname" required><br>
+		Last Name: <input type="text" name="lastname" required><br>
+		Email: <input type="email" name="email" required><br><!-- email - auto checking required - simple check if input is filed -->
+		Password:<input type="password" name="password" minlength="5" required><br> <!-- min="" - min num of characters needed -->
+		Birthday: <input type="date" name="birthday" required><br>
+		<br>
+		Gender:<br> 
+		<!-- !important, for radio inputs we must specify value to send relevant data -->
+		<input type="radio" name="gender" value="Male">Male<br>
+		<input type="radio" name="gender" value="Female">Female<br>
+		<br>
+		Pets:<br>
+		<input type="checkbox" name="cat"> Cat<br>
+		<input type="checkbox" name="dog"> Dogs<br>
+		<br>
+		Cars:<br>
+		<!-- select also required name -->
+		<select name="cars">
+			<option value="Volvo">Volvo</option>
+			<option value="Volvo">Audi</option>
+			<option value="Volvo">Jaguar</option>
+		</select><br>
+		<br>
+		<input type="submit" value="Register!">
+		<input type="reset"> <!-- clear all form data -->
+	</form>
+</body>
+</html>
+<!--
+?firstname=Mariusz
+&lastname=Ko%26%23322%3Balsky
+&email=mariusz%40wp.pl
+&password=1223123asdasd
+&birthday=2018-11-07
+&gender=Male
+&dog=on
+&cars=Volvo
+-->
