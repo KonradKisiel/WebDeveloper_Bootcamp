@@ -32,14 +32,13 @@ async function fetchUsers(){
 }
 
 //****************** REAL WORLD EXAMPLE 2 ********************/
-
-//PROMISES:
 const urls = [
     'https://jsonplaceholder.typicod.com/users',
     'https://jsonplaceholder.typicode.com/posts',
     'https://jsonplaceholder.typicode.com/albums'
 ]
 
+//PROMISES:
 //fetch returns a promise (with pending)
 Promise.all(urls.map(url => {
     return fetch(url).then(resp=> resp.json())
