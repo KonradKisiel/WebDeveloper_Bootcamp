@@ -55,7 +55,7 @@ Promise.all(urls.map(url=>{
 
 //*********************** ASYNC *************************//
 const urls = [
-    'https://jsonplaceholder.typicod.com/users',
+    'https://jsonplaceholder.typicode.com/users',
     'https://jsonplaceholder.typicode.com/posts',
     'https://jsonplaceholder.typicode.com/albums'
 ]
@@ -79,10 +79,12 @@ const loopThroughUrls = url => {
 		console.log(url)
 	}
 }
+//thanks to for of we can get each item from an array of promises
 //ES9 way of fetching data
 const getData2 = async function(){
 	const arrayOfPromises = urls.map(url => fetch(url));
 	for await (let request of arrayOfPromises){
 		const data = await request.json();
+		console.log(data);
 	}
 }

@@ -1,0 +1,125 @@
+@font-face{
+  font-family: StarWars;
+  src: url(Strjmono.ttf);
+}
+
+.App {
+  text-align: center;
+}
+
+.App-top-bar {
+  position: fixed;
+  width: 100%;
+  top:0;
+}
+
+.App-header {  
+  text-align: center;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.Sw-txt{
+  color: #282c34;
+  font-family: StarWars;
+  text-align: center;
+  text-shadow:
+  -1px -1px 0 #FC0,
+  1px -1px 0 #FC0,
+  -1px 1px 0 #FC0,
+  1px 1px 0 #FC0; 
+}
+
+select:active{
+  border: 1px solid #FC0;
+}
+
+input{
+  text-transform: uppercase;
+  background: #282c34;
+  border: 1px solid #FC0;
+  padding: 10px;
+}
+
+input:active, input:focus{
+  background: #FC0;
+  color: #282c34;
+  outline: none;
+  border: 1px solid #282c34;
+}
+
+input::placeholder{
+  color: #FC0;
+}
+
+#Search-input{
+  width: 50%;
+}
+
+select{
+  background: #FC0;
+  color: #282c34;
+  padding: 10px;
+  border: 1px solid #FC0;
+  padding: 9px 10px 10px 10px;
+}
+
+select:active, select:focus{
+  outline: none;
+}
+
+select > option{
+  padding: 10px;
+  background: #282c34; 
+  color: #FC0;
+}
+
+select:active>option, select:focus>option{
+  background: #282c34; 
+  color: #FC0;
+  outline:none;
+}
+
+#Search-select{
+  width: 135px;
+}
+
+#Container{
+  margin: 20px;
+
+}
+
+.Card{
+  display: inline-block;
+  width: 230px;
+  color: #FC0;
+  border: 1px solid #FC0;
+  margin: 10px;
+}
+
+.Card-img{
+    border: 1px solid #FC0;
+}
+
+.Card-text{
+  padding: 9px 10px 10px 10px;
+  text-align: left;
+}
+
+.Card-btn{
+  color: #FC0;
+  border: 1px solid #FC0;
+  padding: 10px;
+  background: #282c34; 
+  margin-top: -50px;
+  margin-left: 132px;
+}
+
+#footer{
+  width: 100%;
+}
+
+
+
