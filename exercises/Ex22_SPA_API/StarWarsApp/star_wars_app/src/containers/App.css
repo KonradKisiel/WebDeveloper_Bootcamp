@@ -8,9 +8,7 @@
 }
 
 .App-top-bar {
-  position: fixed;
   width: 100%;
-  top:0;
 }
 
 .App-header {  
@@ -54,8 +52,23 @@ input::placeholder{
   color: #FC0;
 }
 
-#Search-input{
+#Search-bar{
+  width: 100%;
+  margin: auto;
+}
+
+#Search-select{
+  width: 135px;
+  display: inline-block;
+}
+
+#Search-div{
   width: 50%;
+  display: inline-block;
+}
+
+#Search-input{
+  width: 100%;
 }
 
 select{
@@ -82,10 +95,6 @@ select:active>option, select:focus>option{
   outline:none;
 }
 
-#Search-select{
-  width: 135px;
-}
-
 #Container{
   margin: 20px;
 
@@ -97,6 +106,10 @@ select:active>option, select:focus>option{
   color: #FC0;
   border: 1px solid #FC0;
   margin: 10px;
+}
+
+.Card-header{
+  margin-top: 5px;
 }
 
 .Card-img{
