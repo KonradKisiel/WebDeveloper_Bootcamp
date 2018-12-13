@@ -1,7 +1,6 @@
 import React from 'react'
 import Tilt from 'react-tilt'
 import './Logo.css'
-import brain from './brain.png'
 import hall from './HAL9000.svg'
 
 
