@@ -3,16 +3,21 @@
   src: url(Strjmono.ttf);
 }
 
+select, button{
+  cursor: pointer;
+}
+
 .App {
   text-align: center;
 }
 
-.App-top-bar {
+#App-top-bar {
   width: 100%;
-}
-
-.App-header {  
-  text-align: center;
+  position: fixed;
+  top: -5px;
+  background: #282c34;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #FC0;
 }
 
 .App-link {
@@ -30,15 +35,12 @@
   1px 1px 0 #FC0; 
 }
 
-select:active{
-  border: 1px solid #FC0;
-}
-
 input{
   text-transform: uppercase;
   background: #282c34;
   border: 1px solid #FC0;
   padding: 10px;
+  color: #FC0;
 }
 
 input:active, input:focus{
@@ -52,23 +54,8 @@ input::placeholder{
   color: #FC0;
 }
 
-#Search-bar{
-  width: 100%;
-  margin: auto;
-}
-
-#Search-select{
-  width: 135px;
-  display: inline-block;
-}
-
-#Search-div{
-  width: 50%;
-  display: inline-block;
-}
-
-#Search-input{
-  width: 100%;
+select:active{
+  border: 1px solid #FC0;
 }
 
 select{
@@ -89,15 +76,19 @@ select > option{
   color: #FC0;
 }
 
-select:active>option, select:focus>option{
-  background: #282c34; 
-  color: #FC0;
-  outline:none;
+#Search-select{
+  width: 135px;
+  display: inline-block;
+}
+
+#Search-input{
+  width: 50%;
+  display: inline-block;
 }
 
 #Container{
-  margin: 20px;
-
+  margin: 120px 20px 20px 20px; 
+  min-height: 640px;
 }
 
 .Card{
@@ -131,6 +122,8 @@ select:active>option, select:focus>option{
 }
 
 #footer{
+  height: 25px;
+  border-top: 1px solid #FC0;
   width: 100%;
 }
 
