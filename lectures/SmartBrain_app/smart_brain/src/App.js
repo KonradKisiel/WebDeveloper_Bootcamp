@@ -12,7 +12,7 @@ import Rank from './components/Rank/Rank';
 
 // initialize with your api key. This will also work in your browser via http://browserify.org/
 const app = new Clarifai.App({
-  apiKey: ''
+  apiKey: 'a04a8acbfceb4ea1bfd639f51a975561'
 });
 
 const particleOptions = {

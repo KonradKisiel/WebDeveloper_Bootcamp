@@ -1,0 +1,73 @@
+***************** NODE ********************
+
+npm install npm@latest -g
+npm init //create package.json
+npm run test
+usefull packages:
+- live-server //npm install -g live-server; to run: live-server in surrent location
+- lodash (for arrays operations)
+- tachyons (predefined class names) npm install tachyons
+
+//** TWO WAY S OF INSTALLING PACKAGES:
+- globaly (-g)
+- localy (in project folder, wythout -g)
+
+browserify script.js > bundle.js
+
+//*** SEMVER *** "lodash": "^4.17.11"  major_release.minor_release.patch_release
+
+//package.json contains all dependencies is nor necessary to push node_modules to github
+
+//custom scripts in package.json:
+"scripts": {browserify script.js > bundle.js && live-server}
+npm run build //execute custom script
+
+touch filename //create a file
+node script_name.js //execute script
+
+node doesn't support import/export, use:
+const largeNumber = 356;
+
+//export default largeNumber;
+module.exports = {
+    largeNumber: largeNumber
+};
+
+const script2 = require('./script2.js')
+
+const a = script2.largeNumber;
+
+
+npm init -y //fast way to create node dependencies file
+
+
+Node have different built in modules, one of them is fs (file stream), which alowes us to read files fs.readFile();
+
+the other one is http
+
+to get access to them jus use:
+const your_name_for_module = require('module_name');
+
+npm install package_name --save-dev //instal module and add to devDependencies, which will not be assigned to production code
+
+//NODEMON - alowes to keep runing node
+npm install nodemon --save-dev
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon script.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.18.8"
+  }
+}
+
+
+//CREATING NODE SERVER
+
