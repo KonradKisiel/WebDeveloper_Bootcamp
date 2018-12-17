@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ImageLinkForm = ({onInputChange, onButtonSubmit}) => {
+const ImageLinkForm = ({onInputChange, onPictureSubmit}) => {
     return (
         <div>
             <p className='f3'>
@@ -11,7 +11,7 @@ const ImageLinkForm = ({onInputChange, onButtonSubmit}) => {
                     {/* onChange mimics in React what input do HTML */ }
                     <input className='f4 pa2 w-70 center' type='text' onChange={onInputChange}/>
                     <button className='w-30 grow f4 link ph3 pv2 dib'
-                    onClick={onButtonSubmit}>
+                    onClick={onPictureSubmit}>
                         Detect
                     </button>
                 </div>
