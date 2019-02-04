@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
 const knex = require('knex');
 
-const postgres = knex({
+const db = knex({
     client: 'pg',
     connection: {
       host : '127.0.0.1',
@@ -14,7 +14,9 @@ const postgres = knex({
     }
 });
 
-console.log(postgres.select('*').from('users'));
+db.select('*').from('users').then(data=>{
+    console.log(data);
+});
 
 const app = express();
 //if we want to compare incoming json with objects data we need to use bodyParser
@@ -76,22 +78,16 @@ app.post('/signin', (req, res) => {
 
 app.post('/register', (req, res)=>{
     const {email, name, password} = req.body;
-
-    bcrypt.hash(password, null, null, function(err, hash) {
-        // Store hash in your password DB.
-        console.log(hash);
-    });
-
-    database.users.push({
-            id: '125',
-            name: name,
-            email: email,
-            password: password,
-            entries: 0, //user score
-            joined: new Date()
+    //returning is buitIn knexjs SELECT statement
+    db('users').returning('*')
+    .insert({
+        email: email,
+        name: name,
+        joined: new Date()
+    }).then(user => {
+        res.json(user[0]);
     })
-    //always respond, otherwise connection will not be closed
-    res.json(database.users[database.users.length-1]);
+    .catch(err => res.status(400).json('unable to register'))
 })
 
 app.get('/profile/:id', (req, res) => {
@@ -119,8 +115,8 @@ app.put('/image', (req, res) =>{
     if (!found) res.status(400).json('not found');
 })
 
-app.listen(3000, ()=>{
-    console.log('app is running on port 3000');
+app.listen(3001, ()=>{
+    console.log('app is running on port 3001');
 })
 
 
