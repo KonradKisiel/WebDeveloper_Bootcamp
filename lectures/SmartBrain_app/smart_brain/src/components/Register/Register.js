@@ -24,7 +24,7 @@ class Register extends React.Component {
 
     onSubmitSignIn = () => {
         //send data to a server, fetch by default does a GET request
-        fetch('http://localhost:3000/register', {
+        fetch('http://localhost:3001/register', {
             method: 'post',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -32,12 +32,11 @@ class Register extends React.Component {
                 email: this.state.email,
                 password: this.state.password
             })
-        })
-        .then(response => response.json())
+        }).then(response => response.json())
         .then(user => {
             if (user){
                 this.props.loadUser(user)
-                this.props.onRouteChange('hone');
+                this.props.onRouteChange('home');
             }
         })
     }
@@ -54,7 +53,7 @@ class Register extends React.Component {
                                 <input 
                                     className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
                                     type="text" name="name" id="name" 
-                                    onChange = {this.onEmailChange}
+                                    onChange = {this.onNameChange}
                                 />
                             </div>
                             <div className="mt3">

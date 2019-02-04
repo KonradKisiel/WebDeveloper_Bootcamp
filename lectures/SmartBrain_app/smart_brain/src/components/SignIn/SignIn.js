@@ -18,7 +18,7 @@ class SignIn extends React.Component {
 
     onSubmitSignIn = () => {
         //send data to a server, fetch by default does a GET request
-        fetch('http://localhost:3000/signin', {
+        fetch('http://localhost:3001/signin', {
             method: 'post',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
