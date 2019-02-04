@@ -2,6 +2,19 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
+const knex = require('knex');
+
+const postgres = knex({
+    client: 'pg',
+    connection: {
+      host : '127.0.0.1',
+      user : 'postgres',
+      password : '!Memtutour',
+      database : 'smart-brain'
+    }
+});
+
+console.log(postgres.select('*').from('users'));
 
 const app = express();
 //if we want to compare incoming json with objects data we need to use bodyParser
