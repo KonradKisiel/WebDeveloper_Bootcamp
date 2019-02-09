@@ -10,6 +10,11 @@ import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import './App.css';
 import Rank from './components/Rank/Rank';
 
+/*clarifai installation issues:
+npm WARN smart_brain_api@1.0.0 No repository field.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.7 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.7: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+*/
 // initialize with your api key. This will also work in your browser via http://browserify.org/
 const app = new Clarifai.App({
   apiKey: 'a04a8acbfceb4ea1bfd639f51a975561'
@@ -85,7 +90,7 @@ onInputChange = event => {
 }
 
 onPictureSubmit = () => {
-  { /* setting app state */ }
+  //setting app state
   this.setState({ imageUrl: this.state.input })
   app.models.predict(
     Clarifai.FACE_DETECT_MODEL,

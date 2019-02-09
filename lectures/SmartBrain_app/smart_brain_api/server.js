@@ -40,5 +40,6 @@ app.get('/profile/:id',profile.handleGetProfile(db));
 app.put('/image', put_image.handlePutImage(db));
 
 app.listen(3001, ()=>{
+    console.log(process.env)
     console.log('app is running on port 3001');
 })
